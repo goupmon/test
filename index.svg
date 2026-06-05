@@ -21,7 +21,7 @@
   </defs>
 
   <!-- Background -->
-  <rect width="900" height="600" fill="url(#bg)"/>
+  <rect width="100%" height="auto" fill="url(#bg)"/>
 
   <!-- Decorative stars -->
   <g fill="#ffffff" opacity="0.5">
