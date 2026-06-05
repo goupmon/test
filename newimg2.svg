@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="800"
+     height="600">
+
+    <title>SVG URL Reference Test</title>
+
+    <text x="20" y="30" font-size="20">
+        SVG URL Reference Test
+    </text>
+
+    <!-- Hyperlink -->
+    <a href="https://example.com">
+        <text x="20" y="70" fill="blue">
+            Link via href
+        </text>
+    </a>
+
+    <!-- Hyperlink via xlink:href -->
+    <a xlink:href="https://example.com">
+        <text x="20" y="110" fill="green">
+            Link via xlink:href
+        </text>
+    </a>
+
+    <!-- External image -->
+    <image
+        href="https://example.com/logo.png"
+        x="20"
+        y="140"
+        width="100"
+        height="100" />
+
+    <!-- External image via xlink -->
+    <image
+        xlink:href="https://example.com/logo.png"
+        x="140"
+        y="140"
+        width="100"
+        height="100" />
+
+    <!-- CSS URL reference -->
+    <style>
+        .bg {
+            fill: url(#grad1);
+        }
+    </style>
+
+    <defs>
+        <linearGradient id="grad1">
+            <stop offset="0%" stop-color="red"/>
+            <stop offset="100%" stop-color="blue"/>
+        </linearGradient>
+    </defs>
+
+    <rect x="20" y="270"
+          width="200"
+          height="80"
+          class="bg" />
+
+    <!-- use element -->
+    <defs>
+        <circle id="testcircle" cx="0" cy="0" r="20" />
+    </defs>
+
+    <use href="#testcircle"
+         x="300"
+         y="100" />
+
+    <use xlink:href="#testcircle"
+         x="350"
+         y="100" />
+
+</svg>
