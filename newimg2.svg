@@ -1,33 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="400"
-     height="220"
-     viewBox="0 0 400 220">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350">
 
-  <rect width="100%" height="100%" fill="#f5f5f5"/>
+  <script type="text/ecmascript"><![CDATA[
+    function test1() { location='https://example.com'; }
+    function test2() { location.href='https://example.com'; }
+    function test3() { location.assign('https://example.com'); }
+    function test4() { location.replace('https://example.com'); }
+    function test5() { window.location='https://example.com'; }
+    function test6() { window.location.href='https://example.com'; }
+    function test7() { window.open('https://example.com'); }
+    function test8() { window.open('https://example.com','_blank'); }
+    function test9() { parent.location='https://example.com'; }
+    function test10() { top.location='https://example.com'; }
+  ]]></script>
 
-  <text x="20" y="35" font-family="Arial" font-size="20" font-weight="bold">
-    Contact Form
-  </text>
+  <style>
+    .btn { fill:#4CAF50; cursor:pointer; }
+    .txt { fill:white; font-size:14px; text-anchor:middle; }
+  </style>
 
-  <text x="20" y="70" font-family="Arial" font-size="14">Name:</text>
-  <rect x="80" y="55" width="280" height="25" fill="white" stroke="#999"/>
+  <g onclick="test1()">
+    <rect class="btn" x="20" y="20" width="160" height="30"/>
+    <text class="txt" x="100" y="40">location=</text>
+  </g>
 
-  <text x="20" y="110" font-family="Arial" font-size="14">Email:</text>
-  <rect x="80" y="95" width="280" height="25" fill="white" stroke="#999"/>
+  <g onclick="test2()">
+    <rect class="btn" x="20" y="60" width="160" height="30"/>
+    <text class="txt" x="100" y="80">location.href</text>
+  </g>
 
-  <text x="20" y="150" font-family="Arial" font-size="14">Message:</text>
-  <rect x="80" y="135" width="280" height="40" fill="white" stroke="#999"/>
+  <g onclick="test3()">
+    <rect class="btn" x="20" y="100" width="160" height="30"/>
+    <text class="txt" x="100" y="120">location.assign()</text>
+  </g>
 
-  <g onclick="location.assign('https://example.com')" style="cursor:pointer">
-    <rect x="150" y="185" width="100" height="30" rx="5" fill="#4CAF50"/>
-    <text x="200"
-          y="205"
-          text-anchor="middle"
-          font-family="Arial"
-          font-size="14"
-          fill="white">
-      Submit
-    </text>
+  <g onclick="test4()">
+    <rect class="btn" x="20" y="140" width="160" height="30"/>
+    <text class="txt" x="100" y="160">location.replace()</text>
+  </g>
+
+  <g onclick="test5()">
+    <rect class="btn" x="220" y="20" width="160" height="30"/>
+    <text class="txt" x="300" y="40">window.location</text>
+  </g>
+
+  <g onclick="test6()">
+    <rect class="btn" x="220" y="60" width="160" height="30"/>
+    <text class="txt" x="300" y="80">window.location.href</text>
+  </g>
+
+  <g onclick="test7()">
+    <rect class="btn" x="220" y="100" width="160" height="30"/>
+    <text class="txt" x="300" y="120">window.open()</text>
+  </g>
+
+  <g onclick="test8()">
+    <rect class="btn" x="220" y="140" width="160" height="30"/>
+    <text class="txt" x="300" y="160">window.open(_blank)</text>
+  </g>
+
+  <g onclick="test9()">
+    <rect class="btn" x="420" y="20" width="160" height="30"/>
+    <text class="txt" x="500" y="40">parent.location</text>
+  </g>
+
+  <g onclick="test10()">
+    <rect class="btn" x="420" y="60" width="160" height="30"/>
+    <text class="txt" x="500" y="80">top.location</text>
   </g>
 
 </svg>
