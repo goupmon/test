@@ -4,23 +4,23 @@
      width="800"
      height="600">
 
-    <title>SVG URL Reference Test</title>
+    <title>Cloudflare SVG Sanitization Test</title>
 
     <text x="20" y="30" font-size="20">
-        SVG URL Reference Test
+        Cloudflare SVG URL Test
     </text>
 
     <!-- Hyperlink -->
     <a href="https://example.com">
         <text x="20" y="70" fill="blue">
-            Link via href
+            Hyperlink (href)
         </text>
     </a>
 
-    <!-- Hyperlink via xlink:href -->
+    <!-- Legacy hyperlink -->
     <a xlink:href="https://example.com">
-        <text x="20" y="110" fill="green">
-            Link via xlink:href
+        <text x="20" y="100" fill="green">
+            Hyperlink (xlink:href)
         </text>
     </a>
 
@@ -28,7 +28,7 @@
     <image
         href="https://example.com/logo.png"
         x="20"
-        y="140"
+        y="130"
         width="100"
         height="100" />
 
@@ -36,40 +36,53 @@
     <image
         xlink:href="https://example.com/logo.png"
         x="140"
-        y="140"
+        y="130"
         width="100"
         height="100" />
 
-    <!-- CSS URL reference -->
-    <style>
-        .bg {
-            fill: url(#grad1);
-        }
-    </style>
-
+    <!-- Internal references -->
     <defs>
         <linearGradient id="grad1">
             <stop offset="0%" stop-color="red"/>
             <stop offset="100%" stop-color="blue"/>
         </linearGradient>
+
+        <circle id="testcircle" cx="0" cy="0" r="20"/>
     </defs>
 
-    <rect x="20" y="270"
-          width="200"
-          height="80"
-          class="bg" />
+    <rect
+        x="20"
+        y="260"
+        width="200"
+        height="80"
+        fill="url(#grad1)" />
 
-    <!-- use element -->
+    <use href="#testcircle" x="300" y="100" />
+    <use xlink:href="#testcircle" x="350" y="100" />
+
+    <!-- External SVG reference -->
+    <image
+        href="https://example.com/test.svg"
+        x="20"
+        y="380"
+        width="120"
+        height="120" />
+
+    <!-- Pattern test -->
     <defs>
-        <circle id="testcircle" cx="0" cy="0" r="20" />
+        <pattern id="mypattern"
+                 width="20"
+                 height="20"
+                 patternUnits="userSpaceOnUse">
+            <rect width="20" height="20" fill="lightgray"/>
+        </pattern>
     </defs>
 
-    <use href="#testcircle"
-         x="300"
-         y="100" />
-
-    <use xlink:href="#testcircle"
-         x="350"
-         y="100" />
+    <rect
+        x="180"
+        y="380"
+        width="120"
+        height="120"
+        fill="url(#mypattern)" />
 
 </svg>
