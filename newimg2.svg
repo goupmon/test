@@ -1,53 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="800"
+     height="600">
 
-  <g onclick="location='https://example.com'">
-    <rect x="20" y="20" width="170" height="30" fill="green"/>
-    <text x="105" y="40" text-anchor="middle" fill="white">location=</text>
-  </g>
+    <title>SVG URL Reference Test</title>
 
-  <g onclick="location.href='https://example.com'">
-    <rect x="20" y="60" width="170" height="30" fill="green"/>
-    <text x="105" y="80" text-anchor="middle" fill="white">location.href</text>
-  </g>
+    <text x="20" y="30" font-size="20">
+        SVG URL Reference Test
+    </text>
 
-  <g onclick="location.assign('https://example.com')">
-    <rect x="20" y="100" width="170" height="30" fill="green"/>
-    <text x="105" y="120" text-anchor="middle" fill="white">assign()</text>
-  </g>
+    <!-- Hyperlink -->
+    <a href="https://example.com">
+        <text x="20" y="70" fill="blue">
+            Link via href
+        </text>
+    </a>
 
-  <g onclick="location.replace('https://example.com')">
-    <rect x="20" y="140" width="170" height="30" fill="green"/>
-    <text x="105" y="160" text-anchor="middle" fill="white">replace()</text>
-  </g>
+    <!-- Hyperlink via xlink:href -->
+    <a xlink:href="https://example.com">
+        <text x="20" y="110" fill="green">
+            Link via xlink:href
+        </text>
+    </a>
 
-  <g onclick="window.location='https://example.com'">
-    <rect x="220" y="20" width="170" height="30" fill="blue"/>
-    <text x="305" y="40" text-anchor="middle" fill="white">window.location</text>
-  </g>
+    <!-- External image -->
+    <image
+        href="@logo.png,ggh.tk"
+        x="20"
+        y="140"
+        width="100"
+        height="100" />
 
-  <g onclick="window.location.href='https://example.com'">
-    <rect x="220" y="60" width="170" height="30" fill="blue"/>
-    <text x="305" y="80" text-anchor="middle" fill="white">window.location.href</text>
-  </g>
+    <!-- External image via xlink -->
+    <image
+        xlink:href="//logo.png.ggh.tk"
+        x="140"
+        y="140"
+        width="100"
+        height="100" />
 
-  <g onclick="window.open('https://example.com')">
-    <rect x="220" y="100" width="170" height="30" fill="blue"/>
-    <text x="305" y="120" text-anchor="middle" fill="white">open()</text>
-  </g>
+    <!-- CSS URL reference -->
+    <style>
+        .bg {
+            fill: url(#grad1);
+        }
+    </style>
 
-  <g onclick="window.open('https://example.com','_blank')">
-    <rect x="220" y="140" width="170" height="30" fill="blue"/>
-    <text x="305" y="160" text-anchor="middle" fill="white">open(_blank)</text>
-  </g>
+    <defs>
+        <linearGradient id="grad1">
+            <stop offset="0%" stop-color="red"/>
+            <stop offset="100%" stop-color="blue"/>
+        </linearGradient>
+    </defs>
 
-  <g onclick="parent.location='https://example.com'">
-    <rect x="420" y="20" width="170" height="30" fill="orange"/>
-    <text x="505" y="40" text-anchor="middle" fill="white">parent.location</text>
-  </g>
+    <rect x="20" y="270"
+          width="200"
+          height="80"
+          class="bg" />
 
-  <g onclick="top.location='https://example.com'">
-    <rect x="420" y="60" width="170" height="30" fill="orange"/>
-    <text x="505" y="80" text-anchor="middle" fill="white">top.location</text>
-  </g>
+    <!-- use element -->
+    <defs>
+        <circle id="testcircle" cx="0" cy="0" r="20" />
+    </defs>
+
+    <use href="#testcircle"
+         x="300"
+         y="100" />
+
+    <use xlink:href="#testcircle"
+         x="350"
+         y="100" />
 
 </svg>
