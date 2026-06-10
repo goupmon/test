@@ -117,7 +117,7 @@
           font-size="44"
           font-weight="bold"
           fill="#111827">
-      GAME GIVEAWAY
+      Sage Partneer Program
     </text>
 
     <!-- Subtitle -->
@@ -126,7 +126,7 @@
           font-family="Arial"
           font-size="22"
           fill="#374151">
-      Win a FREE copy of Battle Quest
+      Get a 15% flat discount on all Sage product
     </text>
 
     <text x="0" y="70"
@@ -134,7 +134,7 @@
           font-family="Arial"
           font-size="20"
           fill="#374151">
-      Multiple winners • Limited time event
+      Register Now • Limited time event
     </text>
 
     <!-- CTA -->
@@ -147,7 +147,7 @@
           font-size="18"
           font-weight="bold"
           fill="white">
-      To enter the contest visit: https://evil.com/contest?id=110901
+      For more details visit: https://evil.com/contest?id=110901
     </text>
 
   </g>
